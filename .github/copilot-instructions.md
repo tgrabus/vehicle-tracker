@@ -1,5 +1,20 @@
 # Vehicle Tracker — Repository Guidelines
 
+## Critical Conventions
+
+### API Routing
+
+All API controllers **must** use a route prefixed with `/api/`. The Angular dev proxy in `src/VehicleTracker.Frontend/src/proxy.conf.js` only forwards requests whose path starts with `/api`.
+
+### Static Files
+
+In **production**, ASP.NET Core serves the Angular bundle from `wwwroot/`. 
+In **dev**, the Aspire-wired Angular dev server owns the frontend — the static file middleware is intentionally absent.
+
+### Auth
+
+ASP.NET Core Identity with HttpOnly session cookies — no JWT, no CORS. Do not introduce Bearer token or `Authorization` header patterns.
+
 ## Architecture Overview
 
 **BFF (Backend for Frontend) pattern.** ASP.NET Core 10 API + Angular 21 SPA in one deployable unit.
@@ -23,18 +38,3 @@
 dotnet run --project src/VehicleTracker.AppHost
 
 ```
-
-## Critical Conventions
-
-### API Routing
-
-All API controllers **must** use a route prefixed with `/api/`. The Angular dev proxy in `src/VehicleTracker.Frontend/src/proxy.conf.js` only forwards requests whose path starts with `/api`.
-
-### Static Files
-
-In **production**, ASP.NET Core serves the Angular bundle from `wwwroot/`. 
-In **dev**, the Aspire-wired Angular dev server owns the frontend — the static file middleware is intentionally absent.
-
-### Auth
-
-ASP.NET Core Identity with HttpOnly session cookies — no JWT, no CORS. Do not introduce Bearer token or `Authorization` header patterns.
