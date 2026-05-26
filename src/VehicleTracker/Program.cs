@@ -1,3 +1,5 @@
+using Swashbuckle.AspNetCore.SwaggerUI;
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.AddServiceDefaults();
@@ -12,6 +14,10 @@ app.MapDefaultEndpoints();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwaggerUI(options => 
+    {
+        options.SwaggerEndpoint("/openapi/v1.json", "VehicleTracker API v1");
+    });
 }
 else
 {
