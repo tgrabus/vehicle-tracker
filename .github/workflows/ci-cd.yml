@@ -2,9 +2,9 @@ name: CI/CD
 
 on:
   push:
-    branches: [main]
+    branches: [master]
   pull_request:
-    branches: [main]
+    branches: [master]
   workflow_dispatch:
 
 concurrency:
@@ -44,7 +44,7 @@ jobs:
 
   provision:
     needs: [backend-quality, frontend-quality]
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     environment: dev
     permissions:
