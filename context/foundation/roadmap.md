@@ -3,7 +3,7 @@ project: "Vehicle Tracker"
 version: 1
 status: draft
 created: 2026-05-27
-updated: 2026-05-27
+updated: 2026-05-28
 prd_version: 1
 main_goal: market-feedback
 top_blocker: capacity
@@ -31,7 +31,7 @@ This maps directly to Primary Success Criterion steps 4–7 and is the single fl
 
 | ID | Change ID | Outcome (user can …) | Prerequisites | PRD refs | Status |
 |---|---|---|---|---|---|
-| F-01 | db-context-scaffold | (foundation) data persistence layer wired to the database; schema migration infrastructure ready; no domain entities yet | — | FR-001 | ready |
+| F-01 | db-context-scaffold | (foundation) data persistence layer wired to the database; schema migration infrastructure ready; no domain entities yet | — | FR-001 | done |
 | F-02 | frontend-shell-scaffold | (foundation) UI component library installed and themed; authenticated app shell with navigation and routing structure; no feature screens, no auth logic | — | FR-019 | ready |
 | S-01 | auth-flows | register, log in, and log out | F-01, F-02 | FR-001, FR-002, FR-003 | proposed |
 | S-02 | vehicle-management | add a vehicle, edit its details, soft-delete it (history archived), and own multiple vehicles under one account | S-01 | FR-004, FR-006, FR-007, FR-008 | proposed |
@@ -64,10 +64,9 @@ Foundations below assume these are present and do NOT re-scaffold them.
 - **Unknowns:**
 	- How should schema migrations run in this project: applied automatically on startup, or as a separate deployment step? Owner: Tomasz. Block: no.
 - **Risk:** Minimal — purely additive infrastructure with no domain decisions. The migration application path must be settled here so slice-owned schema changes are not applied inconsistently across dev and deploy environments.
-- **Status:** ready
+- **Status:** done
 
 ### F-02: App shell scaffold
-
 - **Outcome:** (foundation) UI component library installed with a configured theme (colour palette, typography, density); authenticated app shell layout created with responsive navigation and a feature-screen slot; routing structure established so each slice adds its own routes consistently; no feature screens, no public layout, no auth guard — those are added slice by slice.
 - **Change ID:** frontend-shell-scaffold
 - **PRD refs:** FR-019

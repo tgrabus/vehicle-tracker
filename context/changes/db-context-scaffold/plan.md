@@ -322,7 +322,7 @@ The `InitialCreate` migration is empty — its sole purpose is establishing the 
 
 #### Manual
 
-- [ ] 1.4 Aspire dashboard shows a `vehicletracker` database health check entry when running locally
+- [x] 1.4 Aspire dashboard shows a `vehicletracker` database health check entry when running locally
 
 ### Phase 2: Create InitialCreate Migration
 
@@ -334,7 +334,7 @@ The `InitialCreate` migration is empty — its sole purpose is establishing the 
 
 #### Manual
 
-- [ ] 2.4 The generated migration's `Up` method body is empty (no `CreateTable` calls)
+- [x] 2.4 The generated migration's `Up` method body is empty (no `CreateTable` calls)
 
 ### Phase 3: Wire AddEFMigrations in AppHost and Add CI Validation
 
@@ -348,5 +348,4 @@ The `InitialCreate` migration is empty — its sole purpose is establishing the 
 
 - [x] 3.4 Aspire dashboard shows `api-migrations` transitioning `Pending → Running → Finished` before `api` starts
 - [ ] 3.5 `azd up` completes; migration Container App Job appears in Azure portal with Succeeded status
-- [x ] 3.6 After `azd up`, `__EFMigrationsHistory` table exists with one row for `InitialCreate`
-- [x ] 3.6 `__EFMigrationsHistory` table exists with one row for `InitialCreate` after deploy
+- [x] 3.6 After `azd up`, `__EFMigrationsHistory` table exists with one row for `InitialCreate`
