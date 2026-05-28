@@ -316,9 +316,9 @@ The `InitialCreate` migration is empty — its sole purpose is establishing the 
 
 #### Automated
 
-- [x] 1.1 `dotnet build src/VehicleTracker.Data/VehicleTracker.Data.csproj --configuration Release` succeeds with no warnings
-- [x] 1.2 `dotnet build src/VehicleTracker/VehicleTracker.csproj --configuration Release` succeeds with no warnings
-- [x] 1.3 `dotnet build src/VehicleTracker.AppHost/VehicleTracker.AppHost.csproj --configuration Release` succeeds with no warnings
+- [x] 1.1 `dotnet build src/VehicleTracker.Data/VehicleTracker.Data.csproj --configuration Release` succeeds with no warnings — c5110e3
+- [x] 1.2 `dotnet build src/VehicleTracker/VehicleTracker.csproj --configuration Release` succeeds with no warnings — c5110e3
+- [x] 1.3 `dotnet build src/VehicleTracker.AppHost/VehicleTracker.AppHost.csproj --configuration Release` succeeds with no warnings — c5110e3
 
 #### Manual
 
