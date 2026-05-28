@@ -9,7 +9,7 @@ public sealed class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Ap
     {
         var connectionString =
             Environment.GetEnvironmentVariable("ConnectionStrings__vehicletracker")
-            ?? "Host=localhost;Port=5432;Database=vehicletracker;Username=postgres;Password=postgres";
+            ?? throw new Exception("Missing ConnectionStrings__vehicletracker");
 
         var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
         optionsBuilder.UseNpgsql(connectionString);

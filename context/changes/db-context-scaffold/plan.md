@@ -340,13 +340,13 @@ The `InitialCreate` migration is empty — its sole purpose is establishing the 
 
 #### Automated
 
-- [x] 3.1 `dotnet build src/VehicleTracker.AppHost/VehicleTracker.AppHost.csproj --configuration Release` succeeds after AppHost changes
+- [x] 3.1 `dotnet build src/VehicleTracker.AppHost/VehicleTracker.AppHost.csproj --configuration Release` succeeds after AppHost changes — bab246e
 - [ ] 3.2 CI `backend-quality` job passes including the new migration script step
 - [ ] 3.3 CI `deploy` job succeeds with `dotnet tool restore` present
 
 #### Manual
 
-- [ ] 3.4 Aspire dashboard shows `api-migrations` transitioning `Pending → Running → Finished` before `api` starts
+- [x] 3.4 Aspire dashboard shows `api-migrations` transitioning `Pending → Running → Finished` before `api` starts
 - [ ] 3.5 `azd up` completes; migration Container App Job appears in Azure portal with Succeeded status
-- [ ] 3.6 After `azd up`, `__EFMigrationsHistory` table exists with one row for `InitialCreate`
-- [ ] 3.6 `__EFMigrationsHistory` table exists with one row for `InitialCreate` after deploy
+- [x ] 3.6 After `azd up`, `__EFMigrationsHistory` table exists with one row for `InitialCreate`
+- [x ] 3.6 `__EFMigrationsHistory` table exists with one row for `InitialCreate` after deploy

@@ -4,6 +4,7 @@
     <Deploy />
   </Project>
   <Folder Name="/Solution Items/">
+    <File Path="../.github/workflows/ci-cd.yml" />
     <File Path=".editorconfig" />
   </Folder>
   <Project Path="VehicleTracker.AppHost/VehicleTracker.AppHost.csproj" Id="c2dba433-dec3-4b88-8a1b-dfcaed0e1341" />
