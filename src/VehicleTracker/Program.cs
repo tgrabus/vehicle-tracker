@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.HttpOverrides;
-using Swashbuckle.AspNetCore.SwaggerUI;
 
 var builder = WebApplication.CreateBuilder(args);
 

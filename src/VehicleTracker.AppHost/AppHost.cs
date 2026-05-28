@@ -19,6 +19,14 @@ var api = builder.AddProject<Projects.VehicleTracker>("api")
         app.Template.Scale.MaxReplicas = 3;
     });
 
+var apiMigrations = api.AddEFMigrations("api-migrations")
+    .WithMigrationsProject<Projects.VehicleTracker_Data>()
+    .WithReference(postgres)
+    .WaitFor(postgres)
+    .RunDatabaseUpdateOnStart();
+
+api.WaitForCompletion(apiMigrations);
+
 var frontend = builder
     .AddViteApp("frontend", "../VehicleTracker.Frontend", "start")
     .WithHttpsEndpoint(port: 4200, env: "DEV_SERVER_PORT")

@@ -16,6 +16,9 @@ prompts
 *.sln.docstates
 *.env
 
+#Rider
+.idea/
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 

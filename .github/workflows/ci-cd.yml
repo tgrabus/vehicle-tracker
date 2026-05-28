@@ -25,6 +25,14 @@ jobs:
       - run: dotnet build src/VehicleTracker/VehicleTracker.csproj --no-restore --configuration Release
       - run: dotnet build src/VehicleTracker.AppHost/VehicleTracker.AppHost.csproj --no-restore --configuration Release
       - run: dotnet build src/VehicleTracker.ServiceDefaults/VehicleTracker.ServiceDefaults.csproj --no-restore --configuration Release
+      - name: Restore dotnet tools
+        run: dotnet tool restore
+      - name: Validate migrations (idempotent SQL script)
+        run: >
+          dotnet ef migrations script --idempotent
+          --project src/VehicleTracker.Data/VehicleTracker.Data.csproj
+          --startup-project src/VehicleTracker/VehicleTracker.csproj
+          --output /tmp/migrations.sql
       - name: NuGet vulnerability scan
         run: dotnet list src/VehicleTracker/VehicleTracker.csproj package --vulnerable --include-transitive
 
@@ -65,5 +73,6 @@ jobs:
         with:
           node-version: '22'
       - uses: Azure/setup-azd@v2
+      - run: dotnet tool restore
       - run: azd auth login --client-id "$AZURE_CLIENT_ID" --federated-credential-provider github --tenant-id "$AZURE_TENANT_ID"
       - run: azd up --no-prompt

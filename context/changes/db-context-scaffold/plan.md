@@ -86,7 +86,7 @@ Create the `VehicleTracker.Data` class library with `ApplicationDbContext` and t
 
 **Intent**: Allow `dotnet ef` tooling to instantiate `ApplicationDbContext` without the Aspire DI container. Used only when running `dotnet ef migrations add` or `dotnet ef migrations script` locally and in CI.
 
-**Contract**: Implements `IDesignTimeDbContextFactory<ApplicationDbContext>`. Reads the connection string from the `ConnectionStrings__vehicletracker` environment variable; falls back to a localhost Postgres default so the factory works on a clean dev machine without env setup. The environment-variable name must match what Aspire injects at runtime (`vehicletracker` database name → `ConnectionStrings__vehicletracker`).
+**Contract**: Implements `IDesignTimeDbContextFactory<ApplicationDbContext>`. Reads the connection string from the `ConnectionStrings__vehicletracker` environment variable; throws exception if no env config found. The environment-variable name must match what Aspire injects at runtime (`vehicletracker` database name → `ConnectionStrings__vehicletracker`).
 
 ```csharp
 public ApplicationDbContext CreateDbContext(string[] args)
@@ -328,9 +328,9 @@ The `InitialCreate` migration is empty — its sole purpose is establishing the 
 
 #### Automated
 
-- [x] 2.1 `src/VehicleTracker.Data/Migrations/` folder exists with three generated files
-- [x] 2.2 `dotnet tool restore` completes without error
-- [x] 2.3 `dotnet ef migrations script --idempotent` exits 0 and emits valid SQL
+- [x] 2.1 `src/VehicleTracker.Data/Migrations/` folder exists with three generated files — 53d8740
+- [x] 2.2 `dotnet tool restore` completes without error — 53d8740
+- [x] 2.3 `dotnet ef migrations script --idempotent` exits 0 and emits valid SQL — 53d8740
 
 #### Manual
 
@@ -340,7 +340,7 @@ The `InitialCreate` migration is empty — its sole purpose is establishing the 
 
 #### Automated
 
-- [ ] 3.1 `dotnet build src/VehicleTracker.AppHost/VehicleTracker.AppHost.csproj --configuration Release` succeeds after AppHost changes
+- [x] 3.1 `dotnet build src/VehicleTracker.AppHost/VehicleTracker.AppHost.csproj --configuration Release` succeeds after AppHost changes
 - [ ] 3.2 CI `backend-quality` job passes including the new migration script step
 - [ ] 3.3 CI `deploy` job succeeds with `dotnet tool restore` present
 

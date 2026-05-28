@@ -12,17 +12,18 @@
     <PackageReference Include="Aspire.Hosting.Azure.AppContainers" Version="13.3.5" />
     <PackageReference Include="Aspire.Hosting.Azure.PostgreSQL" Version="13.3.5" />
     <PackageReference Include="Aspire.Hosting.Azure.Storage" Version="13.3.5" />
+    <PackageReference Include="Aspire.Hosting.EntityFrameworkCore" Version="13.3.5-preview.1.26270.6" />
     <PackageReference Include="Aspire.Hosting.JavaScript" Version="13.3.5" />
     <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="13.3.5" />
   </ItemGroup>
 
   <PropertyGroup>
-    <NoWarn>$(NoWarn);ASPIREJAVASCRIPT001</NoWarn>
+    <NoWarn>$(NoWarn);ASPIREJAVASCRIPT001;ASPIREAZURE002;ASPIRE004</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\VehicleTracker\VehicleTracker.csproj" />
-    <ProjectReference Include="..\VehicleTracker.Data\VehicleTracker.Data.csproj" IsAspireProjectResource="false" />
+    <ProjectReference Include="..\VehicleTracker.Data\VehicleTracker.Data.csproj" />
   </ItemGroup>
 
 </Project>
