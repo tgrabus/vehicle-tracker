@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\VehicleTracker\VehicleTracker.csproj" />
+    <ProjectReference Include="..\VehicleTracker.Data\VehicleTracker.Data.csproj" IsAspireProjectResource="false" />
   </ItemGroup>
 
 </Project>

@@ -9,11 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspire.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.3.5" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.8" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.1.7" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VehicleTracker.Data\VehicleTracker.Data.csproj" />
     <ProjectReference Include="..\VehicleTracker.ServiceDefaults\VehicleTracker.ServiceDefaults.csproj" />
   </ItemGroup>
 
