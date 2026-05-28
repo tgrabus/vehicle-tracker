@@ -328,9 +328,9 @@ The `InitialCreate` migration is empty — its sole purpose is establishing the 
 
 #### Automated
 
-- [ ] 2.1 `src/VehicleTracker.Data/Migrations/` folder exists with three generated files
-- [ ] 2.2 `dotnet tool restore` completes without error
-- [ ] 2.3 `dotnet ef migrations script --idempotent` exits 0 and emits valid SQL
+- [x] 2.1 `src/VehicleTracker.Data/Migrations/` folder exists with three generated files
+- [x] 2.2 `dotnet tool restore` completes without error
+- [x] 2.3 `dotnet ef migrations script --idempotent` exits 0 and emits valid SQL
 
 #### Manual
 
